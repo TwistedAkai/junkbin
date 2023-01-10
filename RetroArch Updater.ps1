@@ -1,12 +1,12 @@
 ﻿param (
     #URI to download from
-	[System.URI][ValidateScript({$_.IsAbsoluteUri})]$uri       = "http://buildbot.libretro.com/nightly/windows/x86_64/RetroArch.7z",
+    [System.URI][ValidateScript({$_.IsAbsoluteUri})]$uri       = "http://buildbot.libretro.com/nightly/windows/x86_64/RetroArch.7z",
     #Folder to download to. Should already exist.
-	[string][ValidateScript({Test-Path $_ -IsValid})]$download = "F:\Games\",
+    [string][ValidateScript({Test-Path $_ -IsValid})]$download = "F:\Games\",
     #Folder to extract to. 7Zip will create it if it does not already exist.
-	[string][ValidateScript({Test-Path $_ -IsValid})]$install  = "F:\Games\RetroArch\",
+    [string][ValidateScript({Test-Path $_ -IsValid})]$install  = "F:\Games\RetroArch\",
     #Path to 7zip executable
-	[string][ValidateScript({Test-Path $_})]$7z                = "C:\Program Files\7-Zip\7z.exe",
+    [string][ValidateScript({Test-Path $_})]$7z                = "C:\Program Files\7-Zip\7z.exe",
     #Destination filename. Will be pulled from URL if not defined.
     [string]$filename
 )
